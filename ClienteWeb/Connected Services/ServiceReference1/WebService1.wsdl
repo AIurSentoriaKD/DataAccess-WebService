@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarAlumnos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarAlumnosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarAlumnosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarEscuela">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarEscuelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarEscuelaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodAlumno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LugarNac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaNac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodEscuela" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarAlumnoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarEscuela">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodEscuela" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Escuela" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Facultad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarEscuelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarEscuelaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodAlumno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarAlumnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarEscuela">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEscuela" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarEscuelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarEscuelaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codAlumno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LugarNac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaNac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodEscuela" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarAlumnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEscuela">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEscuela" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="escuela" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="facultad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEscuelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarEscuelaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stringtofind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAlumnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarAlumnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarEscuela">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stringtofind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarEscuelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarEscuelaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarAlumnosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarAlumnos" />
+  </wsdl:message>
+  <wsdl:message name="ListarAlumnosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarAlumnosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarEscuelaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarEscuela" />
+  </wsdl:message>
+  <wsdl:message name="ListarEscuelaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarEscuelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarEscuelaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarEscuela" />
+  </wsdl:message>
+  <wsdl:message name="AgregarEscuelaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarEscuelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarEscuelaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarEscuela" />
+  </wsdl:message>
+  <wsdl:message name="EliminarEscuelaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarEscuelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEscuelaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarEscuela" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEscuelaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarEscuelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarEscuelaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarEscuela" />
+  </wsdl:message>
+  <wsdl:message name="BuscarEscuelaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarEscuelaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="ListarAlumnos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar la tabla Alumnos</wsdl:documentation>
+      <wsdl:input message="tns:ListarAlumnosSoapIn" />
+      <wsdl:output message="tns:ListarAlumnosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEscuela">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar la tabla Escuela</wsdl:documentation>
+      <wsdl:input message="tns:ListarEscuelaSoapIn" />
+      <wsdl:output message="tns:ListarEscuelaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAlumno">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar un alumno</wsdl:documentation>
+      <wsdl:input message="tns:AgregarAlumnoSoapIn" />
+      <wsdl:output message="tns:AgregarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEscuela">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar una Escuela</wsdl:documentation>
+      <wsdl:input message="tns:AgregarEscuelaSoapIn" />
+      <wsdl:output message="tns:AgregarEscuelaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAlumno">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar un alumno</wsdl:documentation>
+      <wsdl:input message="tns:EliminarAlumnoSoapIn" />
+      <wsdl:output message="tns:EliminarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEscuela">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar una escuela</wsdl:documentation>
+      <wsdl:input message="tns:EliminarEscuelaSoapIn" />
+      <wsdl:output message="tns:EliminarEscuelaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAlumno">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar alumno</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarAlumnoSoapIn" />
+      <wsdl:output message="tns:ActualizarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEscuela">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Escuela</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarEscuelaSoapIn" />
+      <wsdl:output message="tns:ActualizarEscuelaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAlumno">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Busqueda de alumno</wsdl:documentation>
+      <wsdl:input message="tns:BuscarAlumnoSoapIn" />
+      <wsdl:output message="tns:BuscarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEscuela">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Busqueda Escuela</wsdl:documentation>
+      <wsdl:input message="tns:BuscarEscuelaSoapIn" />
+      <wsdl:output message="tns:BuscarEscuelaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarAlumnos">
+      <soap:operation soapAction="http://tempuri.org/ListarAlumnos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEscuela">
+      <soap:operation soapAction="http://tempuri.org/ListarEscuela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAlumno">
+      <soap:operation soapAction="http://tempuri.org/AgregarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEscuela">
+      <soap:operation soapAction="http://tempuri.org/AgregarEscuela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAlumno">
+      <soap:operation soapAction="http://tempuri.org/EliminarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEscuela">
+      <soap:operation soapAction="http://tempuri.org/EliminarEscuela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAlumno">
+      <soap:operation soapAction="http://tempuri.org/ActualizarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEscuela">
+      <soap:operation soapAction="http://tempuri.org/ActualizarEscuela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAlumno">
+      <soap:operation soapAction="http://tempuri.org/BuscarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEscuela">
+      <soap:operation soapAction="http://tempuri.org/BuscarEscuela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarAlumnos">
+      <soap12:operation soapAction="http://tempuri.org/ListarAlumnos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEscuela">
+      <soap12:operation soapAction="http://tempuri.org/ListarEscuela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/AgregarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEscuela">
+      <soap12:operation soapAction="http://tempuri.org/AgregarEscuela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEscuela">
+      <soap12:operation soapAction="http://tempuri.org/EliminarEscuela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEscuela">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarEscuela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/BuscarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEscuela">
+      <soap12:operation soapAction="http://tempuri.org/BuscarEscuela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44370/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44370/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
